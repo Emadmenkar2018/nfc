@@ -2,7 +2,7 @@
 
 import React, { useState,useEffect,useRef } from 'react';
 import { View, Text, StyleSheet ,Dimensions, ScrollView,} from 'react-native';  
-import {_getDates,_extractDays,_extractDays2,_getDates2} from '../../utils/methods'  
+import {_getDates,_extractDays,_extractDays2,_getDates2 , _newgetDates} from '../../utils/methods'  
 import { useHistory } from 'react-router-native'; 
 import { 
     responsiveScreenFontSize
@@ -11,53 +11,36 @@ import DayComponent from './DayComponent'
 
 
 const MyCalender = ({   ...props }) => { 
- 
-
-//    const [showRandevu, setShowRandevu] =useState(false) 
-   const [myRan, setmyRandevus] =useState('')
-   const [index, setIndex] =useState(2)
-   const [firstIndex, setFirstindex] =useState('')
-   const [myitem, setMyitem] =useState('')
-   const [passingData,setPassingData]=useState('')
-   const carrousel = useRef(null);
-   let history = useHistory(); 
-    
   
+   const [index, setIndex] =useState(2)  
+   const myScroller = useRef(null); 
 
-   useEffect(() =>{  
+   console.log('scroller', myScroller)
 
-    }, []);
-    
+//    myScroller.scrollTo(30); 
 
-    const _renderItem = ({item, index}) => {  
-            return (
-                <View   style={styles.slide}> 
-                    {/* <Text style={props.randevudays.includes(item)? styles.titleHighlighted : styles.title}>{ item }</Text>  */}
-                    <Text>{ item }</Text> 
-                </View>
 
-            );
-    }
-
- 
-    const handleSnapToItem =(myindex) =>{   
-        setIndex(myindex) 
-    }
- 
+   let DaysList = _newgetDates().map(day => (
+        <DayComponent
+            day={day}
+        />
+    )); 
      
     //Current Date 
-       return ( 
-           <View style={{width:'100%',height:'100%',alignItems:'center',paddingHorizontal:10,zIndex:0}}>
+       return (  
                 
-                <View style={{width:'100%', alignItems:'center',alignContent:'center',justifyContent:'center'}}>   
+            <View style={{width:'100%'  ,alignContent:'center',justifyContent:'center',zindex:1,paddingVertical:20,borderRadius:20}}> 
+
+                
+                <Text style={{fontFamily:'BarlowCondensed-Bold',fontSize:responsiveScreenFontSize(2.2),marginLeft:6}}>Gün Seç</Text>  
+                
+                <ScrollView ref={myScroller} style={{alignSelf:'center',borderRadius:20}} snapToEnd={true} horizontal={true} showsHorizontalScrollIndicator={false}>
+
+                    {DaysList}
                     
-                    <ScrollView>
+                </ScrollView>
 
-                        <DayComponent/>
-
-                    </ScrollView>
-                </View>
-           </View>
+            </View> 
        ) 
    } 
 
@@ -70,12 +53,14 @@ const styles = StyleSheet.create({
     },
     titleHighlighted:{
         fontSize:responsiveScreenFontSize(2.2),
-        color:'#26C8A8',textAlign:'center',
+        color:'#26C8A8',
+        textAlign:'center',
         fontFamily:'Merienda-Regular'
     },
     title:{
         fontSize:responsiveScreenFontSize(2.2),
-        color:'rgba(29, 37, 60,.9)',textAlign:'center',
+        color:'rgba(29, 37, 60,.9)',
+        textAlign:'center',
         fontFamily:'Merienda-Regular'
     },
     stretch:{ 
