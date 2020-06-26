@@ -1,6 +1,9 @@
 
   export const _getdayofWeek=['Pzt','Sal','Çar','Per','Cum','Cmt','Paz']
 
+
+  export const  Month =['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'] 
+
  
 
 //   export const mealsData = {
