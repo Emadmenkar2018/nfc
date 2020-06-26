@@ -83,7 +83,7 @@ const MyCalender = ({   ...props }) => {
        return ( 
            <View style={{width:'100%',height:'100%',alignItems:'center',paddingHorizontal:10,zIndex:0}}>
                 
-                <View style={{width:'100%',position:'absolute',bottom:15  ,alignItems:'center',alignContent:'center'}}>   
+                <View style={{width:'100%', alignItems:'center',alignContent:'center',justifyContent:'center'}}>   
                     <View style={{alignContent:'center'}}> 
                             <Carousel 
                             //  
