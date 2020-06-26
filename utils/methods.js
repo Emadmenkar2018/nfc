@@ -1,11 +1,6 @@
-import {registerApiUrl,updateApiUrl} from '../constants/apiUrls';
-import axios from 'axios'; 
-import React from 'react';
-import { StyleSheet,   View ,Text} from 'react-native'; 
-import moment from 'moment';
+ import moment from 'moment';
 import {_getdayofWeek } from '../constants/arrays'
-import 'moment/locale/tr'
-// require('moment/locale/nl.js');
+import 'moment/locale/tr' 
 
 
 function getRandomArbitrary(min, max) {
@@ -79,19 +74,7 @@ export const ValidateEmail =(inputText )=>{
     }
 }
 
-export const CreateAccount =(bodyFormData )=>{
-  return new Promise((resolve, reject) => { 
-    axios.post(registerApiUrl, bodyFormData)
-      .then(function (response) {  
-        // dispatch(loginUser(response.data.data));  
-        return resolve(response.data);
-      })
-      .catch(function (error) {  
-         console.log('Myerr',error.response.data); 
-         return reject(error.response.data);
-      });  
-  })
-}
+ 
 
 
 export function sortKeys(obj_1) { 
