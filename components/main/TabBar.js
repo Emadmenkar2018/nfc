@@ -6,7 +6,7 @@ import {Svg ,Rect ,Circle} from 'react-native-svg';
 
 const TabBar = (props) =>{
     return (
-        <View style={{height:'30%', width:'100%' }} >
+        <View style={{height:'30%', width:'100%' ,marginTop:20}} >
 
             <View style={{backgroundColor:'#E9ECF1',height:'98%',borderBottomLeftRadius :20, width:'100%', flexDirection:'row', justifyContent:'space-evenly', alignItems:'center'}}>
 
