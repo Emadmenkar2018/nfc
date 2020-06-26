@@ -1,27 +1,7 @@
 
   export const _getdayofWeek=['Pzt','Sal','Çar','Per','Cum','Cmt','Paz']
 
-  export const IMAGES = {
-    body: require('../assets/body.png'),  
-    hand: require('../assets/hand.png'),  
-    belly: require('../assets/belly.png'),  
-    Metabolizm: require('../assets/metabolism.png'),  
-    Energy: require('../assets/energy.png'),  
-    Fizik: require('../assets/runner.png'),  
-    exercise: require('../assets/stopwatch.png'),  
-    fat: require('../assets/cals.png'),  
-    sleep: require('../assets/half-moon.png'),  
-    add :require('../assets/plus.png'),
-    ruler : require('../assets/ruler.png'),
-    arrow : require('../assets/right-arrow.png'),
-    hedef : require('../assets/target.png'),
-    heart : require('../assets/heart.png'),
-    calendar : require('../assets/calendar.png'),
-    edit : require('../assets/edit.png'),
-    delete : require('../assets/delete.png'),
-    ozelcalender : require('../assets/ozelcalender.png'),
-    cross : require('../assets/cross.png'),
-  } 
+ 
 
 //   export const mealsData = {
 //     "2020-03-02": {
