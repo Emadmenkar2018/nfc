@@ -124,7 +124,7 @@ export const _newgetDates=()=>{
       let mon =('0' + (date.getMonth()+1)).slice(-2)
       let day  = ('0' + date.getDate()).slice(-2) 
       arr.push( day.toString() + "-"+ mon.toString());   
-      date = addSubtractDate.add(date, 1, "day")
+      date = addSubtractDate.subtract(date, 1, "day")
   }
     return arr
 } 
