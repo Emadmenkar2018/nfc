@@ -21,8 +21,7 @@ const MainTab = (props) =>{
         }
         else {
             props.setThirdIsSelected()
-        }
-        // props.setIsSelected(true)
+        } 
     }
     return (
 
@@ -31,9 +30,7 @@ const MainTab = (props) =>{
             <View style={{alignItems:'center'}}>
 
                 <View style={{...styles.container,backgroundColor: props.firstisSelected  ? '#FF6F00':props.secondisSelected  ?  '#FF6F00': props.thirdisSelected  ? '#FF6F00':  '#E9ECF1',borderRadius:10}} >
-
-                    {/* <Image height={10} width = {10} resizeMode="contain" source={require('../../assets/ruler.png')} /> */}
-
+  
                     <Image
                     style={{width: responsiveScreenFontSize(5), height: responsiveScreenFontSize(5)}}
                     tintColor={props.firstisSelected  ? '#fff' : props.secondisSelected  ? '#fff' : props.thirdisSelected  ?  null :  null}
