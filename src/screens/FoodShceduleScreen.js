@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text} from 'react-native'; 
+import { StyleSheet, View, Text, ScrollView} from 'react-native'; 
 import Calender from '../../components/foodSchedule/Calender'
-import FoodContainer from '../../components/foodSchedule/FoodContainer' 
 import { Button ,Icon } from 'react-native-elements'; 
+import MealsScroller from '../../components/foodSchedule/MealsScroller'
 import { 
     responsiveScreenFontSize
   } from "react-native-responsive-dimensions"; 
@@ -18,28 +18,15 @@ export default class FoodShceduleScreen extends Component {
 
             <Text style={{fontFamily:'BarlowCondensed-Bold',fontSize:responsiveScreenFontSize(2.2),margin:6}}>Gün Seç</Text>  
 
-            <View style={{backgroundColor:'#E9ECF1',paddingHorizontal:10,borderRadius:10}}>
+            <View style={{backgroundColor:'#E9ECF1',paddingHorizontal:10,borderRadius:10,marginHorizontal:5}}>
 
                 <Calender/>
 
             </View>
 
-
-            <FoodContainer
-                title='Kahvaltı'
-            />
-
-            <FoodContainer
-                title='Ana Yemeği'
+ 
+            <MealsScroller
             /> 
-
-            <FoodContainer
-                title='Akşam Yemeği'
-            />
-
-            <FoodContainer  
-                title='Ek Yemeği'
-            />
 
 
             <View style={{marginTop:'auto',marginBottom:15}}>
@@ -69,7 +56,7 @@ export default class FoodShceduleScreen extends Component {
 const styles = StyleSheet.create({
     container : {
         width:'100%',
-        backgroundColor:'#fff',
+        backgroundColor:'#F4F4F4',
         height : '100%', 
     }
 });

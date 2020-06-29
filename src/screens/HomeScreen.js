@@ -45,7 +45,7 @@ const HomeScreen = (props) =>{
     }
 
     return (
-        <View style={{height:'100%', with:'100%', backgroundColor:"#fff", paddingHorizontal:5}}>
+        <View style={{height:'100%', with:'100%', backgroundColor:"#F4F4F4", paddingHorizontal:5}}>
 
 
             <TitleBar

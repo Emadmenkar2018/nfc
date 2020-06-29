@@ -22,7 +22,7 @@ const DayComponent = ({   ...props }) => {
                 
                     <Text style={{color:'#000',fontSize:responsiveScreenFontSize(2.2),fontFamily:'BarlowCondensed-Regular'}}>{props.day.split('-')[0]}</Text>
 
-                    <Text style={{color:props.day === "26-06"? '#fff':'#FF6E01',fontSize:responsiveScreenFontSize(2),fontFamily:'BarlowCondensed-SemiBold'}}>. . .</Text>
+                    <Text style={{color:props.day === "26-06"? '#fff':'#FF6E01',fontSize:responsiveScreenFontSize(2.2),fontFamily:'BarlowCondensed-SemiBold'}}>. . .</Text>
 
                 
                 </View>
