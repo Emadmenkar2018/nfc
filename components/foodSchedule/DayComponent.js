@@ -15,12 +15,15 @@ const DayComponent = ({   ...props }) => {
        return (
            <TouchableOpacity onPress={()=>console.log('Hey',props.day.split('-')[1])}>
 
-                <View style={{...styles.container,backgroundColor:props.day === "26-06"? '#FF6F00' :'#fff'}}>
+                <View style={{...styles.container,backgroundColor:props.day === "26-06"? '#FF6F00' :'#E9ECF1' ,alignContent:'center'}}>
                         
-                    <Text style={{color:'#000',fontSize:responsiveScreenFontSize(2.2),fontFamily:'BarlowCondensed-Bold'}}>{props.day.split('-')[0]}</Text>
-              
-              
                     <Text style={{color:'#000',fontSize:responsiveScreenFontSize(2),fontFamily:'BarlowCondensed-SemiBold'}}>{Month[parseInt(props.day.split('-')[1])]}</Text>
+                
+                
+                    <Text style={{color:'#000',fontSize:responsiveScreenFontSize(2.2),fontFamily:'BarlowCondensed-Regular'}}>{props.day.split('-')[0]}</Text>
+
+                    <Text style={{color:props.day === "26-06"? '#fff':'#FF6E01',fontSize:responsiveScreenFontSize(2),fontFamily:'BarlowCondensed-SemiBold'}}>. . .</Text>
+
                 
                 </View>
 
@@ -33,13 +36,12 @@ export default DayComponent;
 
 const styles = StyleSheet.create({ 
    container : {
-    elevation: 3 ,
+    elevation: 5 ,
     height:responsiveWidth(18),
     width : responsiveWidth(18),
     marginHorizontal:5, 
     justifyContent:'center',
-    alignItems:'center',
-    borderWidth:.1, 
-    marginTop:10 
+    alignItems:'center', 
+    marginVertical:20 , 
    }
  });

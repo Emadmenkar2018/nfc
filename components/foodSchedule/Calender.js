@@ -29,7 +29,7 @@ const MyCalender = ({   ...props }) => {
     //Current Date 
        return (  
                 
-            <View style={{width:'100%'  ,alignContent:'center',justifyContent:'center',zindex:1,paddingVertical:20,borderRadius:20}}> 
+            <View style={{width:'100%'  ,alignContent:'center',justifyContent:'center',zindex:1,borderRadius:20}}> 
  
                 
                 <ScrollView ref={myScroller} style={{alignSelf:'center',borderRadius:20}} snapToEnd={true} horizontal={true} showsHorizontalScrollIndicator={false}>
