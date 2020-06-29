@@ -16,7 +16,7 @@ const TitleBar = (props) =>{
                 <View style={{flexDirection:'row',justifyContent:'center',alignItems:'center'}}> 
                     <Image style={{width: 30, height: 30}}    tintColor={'#FF6F00'} source={require('../../assets/doctor.png')} resizeMode="contain"/>
 
-                    <Text style={{fontFamily:'Pacifico-Regular'}}>MyApp</Text>
+                    <Text style={{fontFamily:'Pacifico-Regular'}}>Tester</Text>
                 </View>
 
 
