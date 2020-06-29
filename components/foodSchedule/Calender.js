@@ -30,9 +30,7 @@ const MyCalender = ({   ...props }) => {
        return (  
                 
             <View style={{width:'100%'  ,alignContent:'center',justifyContent:'center',zindex:1,paddingVertical:20,borderRadius:20}}> 
-
-                
-                <Text style={{fontFamily:'BarlowCondensed-Bold',fontSize:responsiveScreenFontSize(2.2),marginLeft:6}}>Gün Seç</Text>  
+ 
                 
                 <ScrollView ref={myScroller} style={{alignSelf:'center',borderRadius:20}} snapToEnd={true} horizontal={true} showsHorizontalScrollIndicator={false}>
 
