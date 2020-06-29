@@ -1,6 +1,7 @@
 import React , {useState,useRef} from 'react';
 import {View , StyleSheet} from 'react-native'
 import TabBar from '../../components/main/TabBar'
+import TitleBar from '../../components/main/TitleBar'
 import TableScreen from './TableScreen'
 import FoodShceduleScreen from './FoodShceduleScreen'
 import LogScreen from './LogScreen'
@@ -44,7 +45,12 @@ const HomeScreen = (props) =>{
     }
 
     return (
-        <View style={{height:'100%', with:'100%', backgroundColor:"#fff"}}>
+        <View style={{height:'100%', with:'100%', backgroundColor:"#fff", paddingHorizontal:5}}>
+
+
+            <TitleBar
+
+            />
 
             <TabBar
                 setViewPage={setViewPage}
@@ -64,27 +70,26 @@ const HomeScreen = (props) =>{
                      
 
                 <View style={styles.full} key="1">
-                    {/* {pageIndex ===1 &&  */}
+                  
                         <FoodShceduleScreen
                             {...props} 
                         />
-                    {/* // } */}
+                   
                 </View>
 
                 <View style={styles.full} key="2">
-                    {/* {pageIndex ===2 &&  */}
+              
                         <TableScreen
                             {...props} 
-                        />
-                    {/* // } */}
+                        /> 
+
                 </View>
 
-                <View style={styles.full} key="3">
-                    {/* {pageIndex ===3 &&  */}
+                <View style={styles.full} key="3"> 
+
                         <LogScreen
                         {...props} 
-                    />
-                    {/* } */}
+                    /> 
                     
                 </View>
 
