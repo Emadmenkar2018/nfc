@@ -1,59 +1,51 @@
-import React from 'react'
-import {
-  View, Text, TouchableOpacity
-} from 'react-native'
-import NfcManager, {NfcEvents} from 'react-native-nfc-manager';
+import React, { Component } from 'react';
+import { Button, StyleSheet, Text, View } from 'react-native';
+import { NativeRouter, Route,Scene,useHistory, Switch } from 'react-router-native'; 
+import HomeScreen from './src/screens/HomeScreen'   
+import NfcReaderScreen from './src/screens/NfcReaderScreen'   
 
-class App extends React.Component {
-  componentDidMount() {
-    NfcManager.start();
-    NfcManager.setEventListener(NfcEvents.DiscoverTag, tag => {
-      console.warn('tag', tag);
-      NfcManager.setAlertMessageIOS('I got your tag!');
-      NfcManager.unregisterTagEvent().catch(() => 0);
-    });
-  }
+// import {Provider} from 'react-redux';
 
-  componentWillUnmount() {
-    NfcManager.setEventListener(NfcEvents.DiscoverTag, null);
-    NfcManager.unregisterTagEvent().catch(() => 0);
-  }
+  
+// const store = initStore(); 
 
+
+export default class App extends Component {
   render() {
     return (
-      <View style={{padding: 20}}>
-        <Text>NFC Demo</Text>
-        <TouchableOpacity 
-          style={{padding: 10, width: 200, margin: 20, borderWidth: 1, borderColor: 'black'}}
-          onPress={this._test}
-        >
-          <Text>Test</Text>
-        </TouchableOpacity>
+      // <Provider store={store}>
+        <NativeRouter>
+          <Switch>
+          <Route  
+              exact path="/" 
+              render={props => {
+                return <HomeScreen
+                  {...props}
+                />
+              }}
+            /> 
 
-        <TouchableOpacity 
-          style={{padding: 10, width: 200, margin: 20, borderWidth: 1, borderColor: 'black'}}
-          onPress={this._cancel}
-        >
-          <Text>Cancel Test</Text>
-        </TouchableOpacity>
-      </View>
-    )
-  }
-
-  _cancel = () => {
-    NfcManager.unregisterTagEvent().catch(() => 0);
-  }
-
-  _test =  () => {
-    try {
-      NfcManager.registerTagEvent().then( resp =>{
-        console.warn('resp', resp);
-      });
-    } catch (ex) {
-      console.warn('ex', ex);
-      NfcManager.unregisterTagEvent().catch(() => 0);
-    }
+            <Route  
+              exact path="/Main/NfcReader" 
+              render={props => {
+                return <NfcReaderScreen
+                  {...props}
+                />
+              }}
+            /> 
+          </Switch>
+        </NativeRouter>
+      // </Provider>
+      
+    );
   }
 }
 
-export default App
+const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+  },
+});
