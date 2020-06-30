@@ -14,8 +14,7 @@ const MyCalender = ({   ...props }) => {
   
    const [index, setIndex] =useState(2)  
    const myScroller = useRef(null); 
-
-   console.log('scroller', myScroller)
+ 
 
 //    myScroller.scrollTo(30); 
 
