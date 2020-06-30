@@ -5,6 +5,7 @@ import TitleBar from '../../components/main/TitleBar'
 import TableScreen from './TableScreen'
 import FoodShceduleScreen from './FoodShceduleScreen'
 import LogScreen from './LogScreen'
+import SugarScreen from './SugarScreen'
 import ViewPager from '@react-native-community/viewpager';
 
 const HomeScreen = (props) =>{
@@ -79,7 +80,7 @@ const HomeScreen = (props) =>{
 
                 <View style={styles.full} key="2">
               
-                        <TableScreen
+                        <SugarScreen
                             {...props} 
                         /> 
 
