@@ -3,8 +3,7 @@ import { StyleSheet, View,Text } from 'react-native';
 import LogTabBar from '../../components/log/LogTabBar' 
 import ViewPager from '@react-native-community/viewpager';
 import FoodLogScreen from './FoodLogScreen'
-import SugarLogScreen from './SugarLogScreen' 
-import { BackButton } from 'react-router-native';
+import SugarLogScreen from './SugarLogScreen'  
 
 
 const LogScreen =(props) =>  {

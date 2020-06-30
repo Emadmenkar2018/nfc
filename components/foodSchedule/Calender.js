@@ -3,7 +3,6 @@
 import React, { useState,useEffect,useRef } from 'react';
 import { View, Text, StyleSheet ,Dimensions, ScrollView,} from 'react-native';  
 import {_getDates,_extractDays,_extractDays2,_getDates2 , _newgetDates} from '../../utils/methods'  
-import { useHistory } from 'react-router-native'; 
 import { 
     responsiveScreenFontSize
   } from "react-native-responsive-dimensions"; 
