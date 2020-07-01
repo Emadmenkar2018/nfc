@@ -1,4 +1,4 @@
-package com.nfc;
+package com.enbiosis.seker;
 
 import com.facebook.react.ReactActivity;
 
