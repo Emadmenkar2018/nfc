@@ -27,7 +27,7 @@ const FoodContainer = ({   ...props }) => {
                   
                    <View style={{width:'100%',flexDirection:'row', justifyContent:'space-between',marginVertical:15}}>
 
-                        <Text style={{width : '60%',color:'#88',fontSize:responsiveScreenFontSize(2),fontFamily:'BarlowCondensed-Regular',alignSelf:'center'}}>Yumurta Peynir Ekmek </Text>
+                        <Text style={{width : '60%',color:'#888',fontSize:responsiveScreenFontSize(2),fontFamily:'BarlowCondensed-Regular',alignSelf:'center'}}>Yumurta Peynir Ekmek </Text>
                         
                         {/* <Text style={{color:'#263645',fontSize:responsiveScreenFontSize(2),fontFamily:'BarlowCondensed-Regular',alignSelf:'center'}}>{props.title}</Text> */}
             
