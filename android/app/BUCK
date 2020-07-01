@@ -35,12 +35,12 @@ android_library(
 
 android_build_config(
     name = "build_config",
-    package = "com.nfc",
+    package = "com.enbiosis.seker",
 )
 
 android_resource(
     name = "res",
-    package = "com.nfc",
+    package = "com.enbiosis.seker",
     res = "src/main/res",
 )
 
