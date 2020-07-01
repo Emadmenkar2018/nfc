@@ -48,9 +48,9 @@ export default class App extends Component {
         // </NativeRouter> 
         <Router>
         <Scene key = "root">
-           <Scene key = "home" component = {HomeScreen} title = "Home" initial = {true} />
-           <Scene key = "nfcReader" component = {NfcReaderScreen} title = "NfcReader" />
-           <Scene key = "table" component = {TableScreen} title = "Table" />
+           <Scene key = "home" component = {HomeScreen}  hideNavBar={true} title = "Home" initial = {true} />
+           <Scene key = "nfcReader" component = {NfcReaderScreen} hideNavBar={true}  title = "NfcReader" />
+           <Scene key = "table" component = {TableScreen} hideNavBar={true}   title = "Table" />
         </Scene>
       </Router>
       
