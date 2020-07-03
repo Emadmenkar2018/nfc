@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "665039876061",
+    "firebase_url": "https://enbiosisseker.firebaseio.com",
+    "project_id": "enbiosisseker",
+    "storage_bucket": "enbiosisseker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:665039876061:android:f6ebffcb807e18c0da9034",
+        "android_client_info": {
+          "package_name": "com.enbiosis.seker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "665039876061-ak9hlpv9sfpgnoumrirafudk457oe1p9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBfGNm7-oRvajx8mtuC075G83qs98IZ8E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "665039876061-ak9hlpv9sfpgnoumrirafudk457oe1p9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "665039876061-lq82tfdv5r49tblgqhrsksp4e2dmjl6o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.enbiosis.seker"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

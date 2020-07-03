@@ -7,8 +7,17 @@ import FoodShceduleScreen from './FoodShceduleScreen'
 import LogScreen from './LogScreen'
 import SugarScreen from './SugarScreen'
 import ViewPager from '@react-native-community/viewpager';
+import auth   from '@react-native-firebase/auth';
+
 
 const HomeScreen = (props) =>{
+
+
+  
+
+    // user.providerData.forEach((userInfo) => {
+    //     console.log('User info for provider: ', userInfo);
+    //   });   
 
     const [pageIndex, setPageIndex] = useState(3) 
     const [firstisSelected, setfirstIsSelected] = useState(true) 

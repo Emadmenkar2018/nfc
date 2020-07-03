@@ -139,6 +139,9 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+
+        //here i add for the firebase database error 
+        multiDexEnabled true
     }
     splits {
         abi {
@@ -202,6 +205,10 @@ dependencies {
     compile project(':react-native-vector-icons')
 
     implementation 'com.google.firebase:firebase-analytics:17.2.2'
+
+
+    // here i add for the firebase database error 
+    implementation 'com.android.support:multidex:1.0.3'
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
       exclude group:'com.facebook.fbjni'
