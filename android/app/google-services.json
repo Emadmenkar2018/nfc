@@ -30,6 +30,13 @@
             {
               "client_id": "665039876061-ak9hlpv9sfpgnoumrirafudk457oe1p9.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "665039876061-lq82tfdv5r49tblgqhrsksp4e2dmjl6o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.enbiosis.seker"
+              }
             }
           ]
         }
