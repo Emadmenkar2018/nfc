@@ -1,12 +1,13 @@
 import React , {useState, Component} from 'react'
-import { View ,Text,Image,TouchableOpacity , Dimensions} from 'react-native'
+import { View ,Text,Image,TouchableOpacity , Dimensions, ToastAndroid ,Platform,Alert} from 'react-native'
 import Svg ,{ Defs , Path , Stop  , LinearGradient , Polyline } from 'react-native-svg'
 import Animated, { Easing } from 'react-native-reanimated';
 import { TapGestureHandler, State } from 'react-native-gesture-handler';
 const { width, height } = Dimensions.get('window');
-
+import auth   from '@react-native-firebase/auth';
 import { responsiveScreenFontSize, responsiveWidth, responsiveScreenWidth } from 'react-native-responsive-dimensions' 
-import {Input , Icon,Button} from 'react-native-elements' 
+import {Actions} from 'react-native-router-flux'
+import {Input , Icon,Button, ThemeConsumer} from 'react-native-elements' 
 const {
     Value,
     event,
@@ -65,7 +66,11 @@ function runTiming(clock, value, dest) {
         this.onPress = this.onPress.bind(this);
         
         this.state = {
-            sliderPosition: new Animated.Value(0)
+            sliderPosition: new Animated.Value(0),
+            email:'',
+            password:'',
+            passwordError :'',
+            emailError:''
           }
 
         this.onStateChange = event([
@@ -83,8 +88,7 @@ function runTiming(clock, value, dest) {
         this.onStateChange2 = event([
             {
                 nativeEvent: ({ state }) =>
-                block([
-                    console.log('He2y',state),
+                block([ 
                     cond(
                     eq(state, State.END),
                     set(this.buttonOpacity, runTiming(new Clock(), 1, 0))
@@ -114,6 +118,45 @@ function runTiming(clock, value, dest) {
           duration: 100,
           easing: Easing.linear, 
         }).start();
+    }
+
+    onAuth  = () =>{ 
+        if (this.state.email.length > 0 || this.state.password.length > 0){
+            auth()
+            .signInWithEmailAndPassword(this.state.email, this.state.password)
+            .then(() => {
+              console.log('User account created & signed in!');
+            })
+            .catch(error => {
+              if (error.code === 'auth/email-already-in-use') {
+                  this.setState({emailError:'email is is already in use!'})
+                if (Platform.OS === 'android') {
+                    ToastAndroid.show('That email address is already in use!', ToastAndroid.SHORT)
+                } else {
+                    Alert.alert('That email address is already in use!');
+                }   
+              }
+          
+              if (error.code === 'auth/invalid-email') {
+                this.setState({emailError:'email is is already in use!'})
+                if (Platform.OS === 'android') {
+                    ToastAndroid.show('That email address is invalid!', ToastAndroid.SHORT)
+                } else {
+                    Alert.alert('That email address is invalid!');
+                }  
+              }
+          
+              console.log(error);
+            });
+        }
+        else { 
+            this.setState({emailError:'Bilgileri giriniz' , passwordError:'Bilgileri giriniz'})
+            if (Platform.OS === 'android') {
+                ToastAndroid.show('Bilgileri giriniz', ToastAndroid.SHORT)
+            } else {
+                Alert.alert('Bilgileri giriniz');
+            } 
+        }
     }
 
     render(){
@@ -159,23 +202,26 @@ function runTiming(clock, value, dest) {
                            Giriş Yap
                 </Text>
     
-                <View style={{flexDirection:'row',alignItems:'center' ,backgroundColor:'#f4f4f4', width:'70%',borderTopRightRadius:40,borderBottomRightRadius:40,elevation:5,borderColor:'rgba(255, 111, 0,.3)',shadowColor:'rgba(255, 111, 0,.3)'}}>
+                <View style={{flexDirection:'row',alignItems:'center' ,backgroundColor:'#fff', width:'65%',borderColor:'rgba(255, 111, 0,.3)',shadowColor:'rgba(255, 111, 0,.3)',marginLeft:5}}>
     
         
-                    <View style={{width:'100%',justifyContent:'center' ,alignSelf:'center'}}>
+                    <View style={{width:'100%',justifyContent:'center' ,alignSelf:'center',zindex:-1}}>
     
     
                         <Input
                         placeholder='Email'
-                        // errorStyle={{ color: 'red' }}
-                        // errorMessage='Email'
+                        errorStyle={{ color: 'red' }}
+                        errorMessage={this.state.emailError}
+                        value={this.state.email}
+                        onChangeText = {email=>this.setState({email})}
+                        inputStyle={{fontSize:responsiveScreenFontSize(1.8)}}
                         inputContainerStyle={{borderBottomWidth:0}}
                         errorStyle={{ height:0}}
-                        containerStyle={{backgroundColor:'#fff',width:'100%',padding:2,borderTopRightRadius:80,borderBottomRightRadius:80,justifyContent:'center' , borderBottomWidth:.3}}
+                        containerStyle={{backgroundColor:'#fff',width:'100%',padding:2,justifyContent:'center' , borderBottomWidth:.3,borderTopRightRadius:60,elevation:5}}
                         leftIcon={
                             <Icon
                             name='email'
-                            size={24}
+                            size={20}
                             color='black'
                             />
                         }
@@ -183,16 +229,20 @@ function runTiming(clock, value, dest) {
     
                         <Input
                         placeholder='Şifre'
-                        // errorStyle={{ color: 'red' }}
-                        // errorMessage='ENTER A VALID ERROR HERE'
+                        value={this.state.password}
+                        onChangeText = {password=>this.setState({password})}
+                        secureTextEntry={true}
+                        errorStyle={{ color: 'red' }}
+                        errorMessage={this.state.passwordError}
+                        inputStyle={{fontSize:responsiveScreenFontSize(1.8)}}
                         errorStyle={{ height:0}}
-                        containerStyle={{backgroundColor:'#fff',width:'100%',borderTopRightRadius:80,borderBottomRightRadius:80}}
+                        containerStyle={{backgroundColor:'#fff',width:'100%',borderBottomRightRadius:60,elevation:5,justifyContent:'center' ,padding:2}}
                         inputContainerStyle={{borderBottomWidth:0,}}
                         leftIcon={
                             <Icon
                             name='lock'
                             type='material'
-                            size={24}
+                            size={20}
                             color='black'
                             />
                         }
@@ -202,18 +252,18 @@ function runTiming(clock, value, dest) {
                     </View>
                     
                 
-                    <TapGestureHandler onHandlerStateChange={this.onStateChange2}>
+                    {/* <TapGestureHandler onHandlerStateChange={this.onStateChange2}>
                         <Animated.View
                         style={{
-                            position:'absolute',right:-20,
+                            zindex:1,marginLeft:-20,elevation:5,
                             opacity: this.buttonOpacity,
-                            transform: [{ translateY: this.buttonY }]
+                            transform: [{ translateY: this.bgY }]
                         }}
                         >
                         <Image tintColor={'#fcba03'}  style={{width:responsiveWidth(10),height:responsiveWidth(10)}} resizeMode="contain" source={require('../../../assets/enter.png')} /> 
 
                         </Animated.View>
-                    </TapGestureHandler>
+                    </TapGestureHandler> */}
     
                     {/* <TouchableOpacity onPress={ this.onStateChange} style={{ position:'absolute',right:-20}}>
 
@@ -230,9 +280,9 @@ function runTiming(clock, value, dest) {
                     </TouchableOpacity> */}
 
 
-                    {/* <TouchableOpacity style={{ position:'absolute',right:-20}}>
+                    <TouchableOpacity onPress={this.onAuth} style={{ zindex:1,marginLeft:-20,elevation:5,}}>
                         <Image tintColor={'#fcba03'}  style={{width:responsiveWidth(10),height:responsiveWidth(10)}} resizeMode="contain" source={require('../../../assets/enter.png')} /> 
-                    </TouchableOpacity> */}
+                    </TouchableOpacity>
                     
     
                   
@@ -246,7 +296,7 @@ function runTiming(clock, value, dest) {
                 <Text style={{color:'#999',fontFamily:'BarlowCondensed-SemiBold',marginLeft:20,fontSize:responsiveScreenWidth(4),marginTop:5}}>{'< Unuttun mu'}</Text>
                  
                 <Button 
-                            onPress={()=>console.log('register')}
+                            onPress={()=> Actions.push('register')}
                             title= {'Register'}
                             containerStyle={{borderRadius:10  ,marginRight:15 , width:'20%',alignSelf:'flex-end' ,elevation:4}}
                             buttonStyle={{ backgroundColor:'#fff'}}
