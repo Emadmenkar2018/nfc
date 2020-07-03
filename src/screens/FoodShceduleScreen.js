@@ -6,12 +6,26 @@ import MealsScroller from '../../components/foodSchedule/MealsScroller'
 import { 
     responsiveScreenFontSize
   } from "react-native-responsive-dimensions"; 
+ 
+import {addingUserMeal ,addingextraMeal} from '../../helpers/firebase/FoodHelpers'
+import AddMealModal from '../../components/foodSchedule/AddMealModal';
+// import Fire from '../../Fire' 
 export default class FoodShceduleScreen extends Component {
     constructor(props) {
         super(props);
     }
     
+    state = {
+        mealVisibility : false
+    }
+
+
+    closeMealModal = () => {
+        this.setState({mealVisibility : false})
+    }
+
     render() { 
+  
         return (
         <View style={styles.container}>
  
@@ -40,13 +54,22 @@ export default class FoodShceduleScreen extends Component {
                             color="#fff"
                         />
                     }
+                    onPress={()=>this.setState({mealVisibility:true
+                    
+                    
+                    
+                    })}
                     title="Yemek Ekle" 
-                    containerStyle={{borderRadius:5 , width:'90%',alignSelf:'center', backgroundColor:'#FF6F00' }}
+                    containerStyle={{borderRadius:10 , width:'90%',alignSelf:'center', backgroundColor:'#FF6F00' }}
                     buttonStyle={{ backgroundColor:'#FF6F00'}}
                     />
             
             </View>
 
+            <AddMealModal 
+                mealVisibility={this.state.mealVisibility}
+                closeMealModal = {this.closeMealModal}
+            />
 
         </View>
         )
