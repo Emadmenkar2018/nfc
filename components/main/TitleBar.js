@@ -14,7 +14,7 @@ const TitleBar = (props) =>{
         .then(() => console.log('User signed out!'));
     }
     return (
-        <View style={{height:'8%', width:'100%' ,marginTop:6 , marginBottom:0 ,borderBottomWidth:1,borderBottomColor:'#555' }} >
+        <View style={{height:'8%', width:'100%'  , marginBottom:0 ,elevation:1,borderBottomColor:'#555' }} >
 
             <View style={{backgroundColor:'#fff5f2',height:'98%', width:'100%', flexDirection:'row', justifyContent:'space-between', alignItems:'center' , paddingHorizontal:15}}>
 
