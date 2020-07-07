@@ -121,8 +121,8 @@ export const _newgetDates=()=>{
   for(let i=-1; i<=30; i++) { 
     
       // let mon = date.getMonth()+1
-      let mon =('0' + (date.getMonth()+1)).slice(-2)
-      let day  = ('0' + date.getDate()).slice(-2) 
+      let mon = (date.getMonth()+1).toString().slice(-2)
+      let day  =  date.getDate().toString().slice(-2) 
       arr.push( day.toString() + "-"+ mon.toString());   
       date = addSubtractDate.subtract(date, 1, "day")
   }
