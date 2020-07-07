@@ -11,7 +11,7 @@ const TableHeader = () =>{
             <Icon onPress={()=>Actions.pop()} name="arrow-back" type="material" color="#263645" size={25} />
 
             <View style={{flexDirection:'row',justifyContent:'center',alignItems:'center',alignSelf:'center'}}> 
-                    <Image style={{width: 30, height: 30}}    tintColor={'#FF6F00'} source={require('../../assets/doctor.png')} resizeMode="contain"/>
+                    <Image style={{width: 30, height: 30}}    tintColor={'#fe796d'} source={require('../../assets/doctor.png')} resizeMode="contain"/>
 
                     <Text style={{fontFamily:'Pacifico-Regular'}}>Analyser</Text>
             </View>

@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     paddingHorizontal:10, 
     paddingVertical:5,
     borderLeftWidth:15,
-    borderLeftColor:'#FF6F00'
+    borderLeftColor:'#fe796d'
     
    }
  });

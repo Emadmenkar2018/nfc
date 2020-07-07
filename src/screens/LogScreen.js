@@ -48,7 +48,7 @@ const LogScreen =(props) =>  {
  
  
         return (
-        <View style={{width:'100%',  height : '100%',backgroundColor:'#F4F4F4'}}>
+        <View style={{width:'100%',  height : '100%',backgroundColor:'#fff'}}>
 
 
              <LogTabBar

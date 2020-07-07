@@ -17,7 +17,7 @@ const SugarModal  = (props) => {
             <View style={{height:'100%',width:'100%' ,alignContent:'center',alignItems:'center',justifyContent:'flex-end',backgroundColor:'rgba(0,0,0,.7)'}} >
 
 
-                <View style={{height:'45%',width:'100%',backgroundColor:'#f4f4f4',alignContent:'center',alignItems:'center',justifyContent:'space-evenly', alignSelf:'flex-end'}} >
+                <View style={{height:'45%',width:'100%',backgroundColor:'#fff',alignContent:'center',alignItems:'center',justifyContent:'space-evenly', alignSelf:'flex-end'}} >
                     
                     <Text style={{color:'#000',fontSize:responsiveScreenFontSize(2.5),fontFamily:'BarlowCondensed-SemiBold'}}>{ready ?' Taramaya Hazir' : 'başarıyla tarandı'}</Text>
 
@@ -46,7 +46,7 @@ const SugarModal  = (props) => {
                         onPress={()=>props.closeModal()}
                         title= {ready ? "Iptal": 'Ana Sayfaya Dön'}
                         containerStyle={{borderRadius:20  ,marginBottom:15 , width:'30%'}}
-                        buttonStyle={{ backgroundColor:'#FF6F00'}}
+                        buttonStyle={{ backgroundColor:'#fe796d'}}
                         titleStyle={{color:'#fff',fontSize:responsiveScreenFontSize(1.8),fontFamily:'BarlowCondensed-SemiBold'}}
                     />
 

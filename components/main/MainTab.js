@@ -29,7 +29,7 @@ const MainTab = (props) =>{
 
             <View style={{alignItems:'center'}}>
 
-                <View style={{...styles.container,backgroundColor: props.firstisSelected  ? '#FF6F00':props.secondisSelected  ?  '#FF6F00': props.thirdisSelected  ? '#FF6F00':  '#E9ECF1',borderRadius:10}} >
+                <View style={{...styles.container,backgroundColor: props.firstisSelected  ? '#fe796d':props.secondisSelected  ?  '#fe796d': props.thirdisSelected  ? '#fe796d':  '#fff',borderRadius:10}} >
   
                     <Image
                     style={{width: responsiveScreenFontSize(5), height: responsiveScreenFontSize(5)}}
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     container : {
         height:responsiveScreenWidth(18),
         width:responsiveScreenWidth(18), 
-        elevation:10 ,
+        elevation:3 ,
         alignItems:'center',
         justifyContent:'center'
     },

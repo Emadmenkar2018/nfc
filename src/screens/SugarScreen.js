@@ -16,9 +16,9 @@ const SugarScreen =({ history, ...props })   =>{
       
  
     const chartConfig = {
-        backgroundGradientFrom: "#F4F4F4",
+        backgroundGradientFrom: "#fff",
         // backgroundGradientFromOpacity: 0,
-        backgroundGradientTo: "#F4F4F4",
+        backgroundGradientTo: "#fff",
         // backgroundGradientToOpacity: 0, 
         color: (opacity = 1) => `rgba(15,21,27, ${opacity})`, // optional
         strokeWidth: 2, // optional, default 3
@@ -45,7 +45,7 @@ const SugarScreen =({ history, ...props })   =>{
 
     return (
         // <View> 
-        <View style={{flex:1,justifyContent:'flex-start',backgroundColor:'#f4f4f4'}}>
+        <View style={{flex:1,justifyContent:'flex-start',backgroundColor:'#fff'}}>
 
 
             <View style={{height:'45%',width:'100%',marginBottom:10,color:'rgba(15,21,27,1)'}}>
@@ -75,8 +75,8 @@ const SugarScreen =({ history, ...props })   =>{
                         <Button 
                         onPress={()=>setModalVisibility(true)}
                         title="Tara Şimdi" 
-                        containerStyle={{borderRadius:20  ,marginBottom:15 }}
-                        buttonStyle={{ backgroundColor:'#FF6F00'}}
+                        containerStyle={{borderRadius:10  ,marginBottom:15 }}
+                        buttonStyle={{ backgroundColor:'#fe796d'}}
                         titleStyle={{color:'#fff',fontSize:responsiveScreenFontSize(1.5),fontFamily:'BarlowCondensed-SemiBold'}}
                         />
 
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
         alignItems:'center',
         borderRadius: 10,
         borderWidth:1,
-        borderColor:'#FF6F00'
+        borderColor:'#fe796d'
       },
       talkBubbleTriangle: {
         position: 'absolute',
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
         borderTopColor: 'transparent',
         borderTopWidth: 13,
         borderRightWidth: 26,
-        borderRightColor: '#FF6F00',
+        borderRightColor: '#fe796d',
         borderBottomWidth: 13,
         borderBottomColor: 'transparent'
       }

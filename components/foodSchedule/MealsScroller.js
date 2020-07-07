@@ -5,7 +5,7 @@ import FoodContainer from './FoodContainer'
 const MealsScroller = () =>{
 
     return (
-        <ScrollView style={{backgroundColor:'#F4F4F4'}}>
+        <ScrollView style={{backgroundColor:'#fff'}}>
 
             <FoodContainer
                     title='Kahvaltı'

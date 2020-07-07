@@ -29,7 +29,7 @@ const LogMainTab = (props) =>{
 
             <View style={{alignItems:'center'}}>
 
-                <View style={{...styles.container,backgroundColor: props.firstisSelected  ? '#FF6F00':props.secondisSelected  ?  '#FF6F00': props.thirdisSelected  ? '#FF6F00':  '#E9ECF1',borderRadius:10}} >
+                <View style={{...styles.container,backgroundColor: props.firstisSelected  ? '#fe796d':props.secondisSelected  ?  '#fe796d': props.thirdisSelected  ? '#fe796d':  '#E9ECF1',borderRadius:10}} >
    
 
                     <Text style={{...styles.text,  color :props.firstisSelected  ? '#fff' : props.secondisSelected  ?  '#fff' : '#273444'}}>{props.text}</Text>

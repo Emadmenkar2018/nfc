@@ -8,7 +8,7 @@ const TabBar = (props) =>{
     return (
         <View style={{height:'20%', width:'100%' , marginBottom:10  ,borderLeftColor: 'transparent',  borderBottomEndRadius: 20,borderTopLeftRadius:50}} >
 
-            <View style={{backgroundColor:'#E9ECF1',height:'98%',borderBottomLeftRadius :20, borderBottomEndRadius :20, borderLeftColor:'transparent',width:'100%', flexDirection:'row', justifyContent:'space-evenly', alignItems:'center'}}>
+            <View style={{backgroundColor:'#fff5f2',height:'98%',borderBottomLeftRadius :20, borderBottomEndRadius :20, borderLeftColor:'transparent',width:'100%', flexDirection:'row', justifyContent:'space-evenly', alignItems:'center'}}>
 
  
                 <MainTab
