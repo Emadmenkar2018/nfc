@@ -1,9 +1,11 @@
 import React, { useState ,useRef } from 'react';
-import { StyleSheet, View,Text } from 'react-native'; 
+import { StyleSheet, View,Text ,TouchableOpacity , ImageBackground} from 'react-native'; 
 import LogTabBar from '../../components/log/LogTabBar' 
 import ViewPager from '@react-native-community/viewpager';
 import FoodLogScreen from './FoodLogScreen'
 import SugarLogScreen from './SugarLogScreen'  
+import { responsiveWidth, responsiveHeight, responsiveScreenFontSize } from 'react-native-responsive-dimensions'; 
+import {Actions} from 'react-native-router-flux'
 
 
 const LogScreen =(props) =>  {
@@ -48,10 +50,10 @@ const LogScreen =(props) =>  {
  
  
         return (
-        <View style={{width:'100%',  height : '100%',backgroundColor:'#fff'}}>
+        <View style={{width:'100%',  height : '100%',backgroundColor:'#fff',paddingHorizontal:10,justifyContent:'space-evenly'}}>
 
 
-             <LogTabBar
+             {/* <LogTabBar
                 setViewPage={setViewPage}
                 pageIndex={pageIndex} 
                 // isSelected = {isSelected}
@@ -63,9 +65,36 @@ const LogScreen =(props) =>  {
                 secondisSelected={secondisSelected}
                 thirdisSelected={thirdisSelected}
                 // setIsSelected={setIsSelected}
-            /> 
+            />  */}
+                <Text style={{color:"#253547" , fontFamily:'BarlowCondensed-SemiBold',fontSize:responsiveScreenFontSize(2.2)}}>Geçmiş</Text>
 
-                <ViewPager ref={myViewPager} scrollEnabled={false} transitionStyle='curl' style={styles.viewPager} initialPage={0} >
+                <View style={{width:'100%', flexDirection:'row',alignItems:'center',justifyContent:'center', marginBottom:10}}>
+                    <TouchableOpacity style={{width:'100%',height:'100%'}} onPress={()=>Actions.push('table')}>
+                        <ImageBackground resizeMode={'cover'}  style={{width:'100%',height:responsiveHeight(25) ,borderRadius:10,marginBottom:0,backgroundColor:'#000'}} source={require('../../assets/sugar.jpg')}>
+                            <View style={{width:'100%',height:'100%',backgroundColor:'rgba(255, 245, 242,.2)',justifyContent:'flex-end',alignItems:'flex-start',paddingLeft:20,borderRadius:10}}>
+
+                                <Text style={{fontSize:25,color:'#253547',marginBottom:10,fontFamily:'BarlowCondensed-Regular'}}>Şeker Log</Text>
+    
+                            </View>
+
+                        </ImageBackground>   
+                    </TouchableOpacity>
+                </View>
+
+                <View style={{width:'100%', flexDirection:'row',alignItems:'center',justifyContent:'center', alignSelf:'flex-end'}}>
+                    <TouchableOpacity style={{width:'100%',height:'100%'}} onPress={()=>Actions.push('table')}>
+                        <ImageBackground resizeMode={'cover'}  style={{width:'100%',height:responsiveHeight(25) ,borderRadius:10,marginBottom:0,backgroundColor:'#000'}} source={require('../../assets/food.jpg')}>
+                            <View style={{width:'100%',height:'100%',backgroundColor:'rgba(255, 245, 242,.2)',justifyContent:'flex-end',alignItems:'flex-start',paddingLeft:20,borderRadius:10}}>
+
+                                <Text style={{fontSize:25,color:'#253547',marginBottom:10,fontFamily:'BarlowCondensed-Regular'}}>Yemek Log</Text>
+    
+                            </View>
+
+                        </ImageBackground>   
+                    </TouchableOpacity>
+                </View>
+ 
+                {/* <ViewPager ref={myViewPager} scrollEnabled={false} transitionStyle='curl' style={styles.viewPager} initialPage={0} >
                      
 
                     <View style={styles.full} key="1">
@@ -84,7 +113,7 @@ const LogScreen =(props) =>  {
      
                      </View>   
      
-                 </ViewPager> 
+                 </ViewPager>  */}
 
         </View>
         ) 
