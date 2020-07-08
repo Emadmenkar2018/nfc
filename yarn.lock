@@ -1145,24 +1145,29 @@
   resolved "https://registry.yarnpkg.com/@react-native-firebase/app-types/-/app-types-6.7.2.tgz#d2e1530af5702e00578914b41468898c10d3289c"
   integrity sha512-pIwc6e0ZINw6PJqNVsAxzOVJUDg6au2TdulY+ZOYQ11SPDs5I2n9likoGrElPmJjajT4s9h87uz/6PWP2k9PxQ==
 
-"@react-native-firebase/app@^8.0.0":
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-8.0.0.tgz#bde1b7f72ce373141586a12be4ef6e6f7865b72b"
-  integrity sha512-WraPvpoXOGtSqS9b1tucqgDKLiGDP6eeAwEkutsqhYZYpaVkbQj0PA3Mlb0/Hi09xPQ7xtSV+8luTTBJBHnvHg==
+"@react-native-firebase/app@^8.0.1":
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-8.0.1.tgz#3030094cc0aa2a763feef2291aebd8c852e1a693"
+  integrity sha512-7TN6lGMNHbEAno2PH1BVGvhSz61o3Goq1LCI/1Bac7G8cPj8srNyAysOtzD/VkJmlEJ2UteK5MZKY2jckEsKAg==
   dependencies:
     "@react-native-firebase/app-types" "6.7.2"
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
 
-"@react-native-firebase/auth@^8.0.9":
-  version "8.0.9"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-8.0.9.tgz#2fd0c59b7df78ff904b62d1a0a86a8df177d7c31"
-  integrity sha512-ZK+iXHIdJNqrSQYtBZYyVrx1JCQXPYVqz61gwsIOB2hi8zTs1vUcaZUcK4joI/fAOKSPRwwC8WosOwdLy2kzmg==
+"@react-native-firebase/auth@^8.0.10":
+  version "8.0.10"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-8.0.10.tgz#494814bf9a3fcb4d881046a13ea3b55107bb029a"
+  integrity sha512-pbqERiQyxB+x+1vrhKTiSbFW/FO47F5JeqYQUVz3tN7Gu8DgypIQwelnnytnJBvMsePABvsum6BmgV76tjwPeA==
 
-"@react-native-firebase/database@^7.2.6":
-  version "7.2.6"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/database/-/database-7.2.6.tgz#18504044384a6ef067ba5df3085291f695952336"
-  integrity sha512-Ruz/Uel/AsHJ5xGXmMcal73ubYHod1MfSIOu9iZi3mCUBYdSokbRcqIfSyhbkOnx+G04NW9OAgTFgYxkav26HQ==
+"@react-native-firebase/database@^7.2.7":
+  version "7.2.7"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/database/-/database-7.2.7.tgz#d220f7beacf6f7a990e34754aa49798f5a4befd4"
+  integrity sha512-1BzehG9/httKeAfCTrGMwAcxRXkDQ4diJcUUwUdI6UjHpJ96w3asILeBB4idIYy15BQosR6k8+t+MCTs/gN6lw==
+
+"@react-native-firebase/firestore@^7.2.4":
+  version "7.2.4"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-7.2.4.tgz#27982fd0dba4c70ae03075f45584a9c27d8c2322"
+  integrity sha512-1VJZ7cYyMjdit2I51MmqQRvdxfFLgL2CvHEloiAfqXvzmVF6YQb4DY0ADn2S+l38kDVdZD89rNqxzEuOrl2xdA==
 
 "@react-navigation/core@^3.7.6":
   version "3.7.6"
@@ -3039,6 +3044,16 @@ expect@^26.1.0:
     jest-matcher-utils "^26.1.0"
     jest-message-util "^26.1.0"
     jest-regex-util "^26.0.0"
+
+expo-haptics@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/expo-haptics/-/expo-haptics-6.0.0.tgz#dd0b8390564b3ba398a3f6d726ce5ad99a892ddc"
+  integrity sha512-Xn+u5Gqp0/aLipKUMhPgZrccTO9uSV5FSM9u6bkMhV/zfjZqQMWpm0NqL24OBBXy5wPmF3g6Hev5YyDUd0Jj9Q==
+
+expo-linear-gradient@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/expo-linear-gradient/-/expo-linear-gradient-6.0.0.tgz#5fb0fb955dd22ef4ab032e543cb1c249885bf0b5"
+  integrity sha512-TGHSK7MsoU1wZXx9uEivMggAR/KT4wTSE0xBfhB8qsziGXoHZdoT79/tZ3HyWtCG7+JVUEFXfUOBxtOlZOu5tg==
 
 extend-shallow@^1.1.2:
   version "1.1.4"
@@ -5926,6 +5941,32 @@ react-native-gesture-handler@^1.6.1:
     hoist-non-react-statics "^2.3.1"
     invariant "^2.2.4"
     prop-types "^15.7.2"
+
+react-native-gradient-buttons@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-gradient-buttons/-/react-native-gradient-buttons-2.0.1.tgz#d45347d5dffb673defdd27ef12e295758dc2a4e5"
+  integrity sha512-AIl/sTda8ulheoJMr5WWsRc1lJe/KDswqkOH+DRvyMa/G3gkhUoqE7dorPx1KBmVPS6+ks32MUZU9dO6YvNLVQ==
+  dependencies:
+    expo-haptics "^6.0.0"
+    expo-linear-gradient "^6.0.0"
+
+react-native-iphone-x-helper@^1.0.3:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.2.1.tgz#645e2ffbbb49e80844bb4cbbe34a126fda1e6772"
+  integrity sha512-/VbpIEp8tSNNHIvstuA3Swx610whci1Zpc9mqNkqn14DkMbw+ORviln2u0XyHG1kPvvwTNGZY6QpeFwxYaSdbQ==
+
+react-native-keyboard-aware-scroll-view@^0.9.1:
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/react-native-keyboard-aware-scroll-view/-/react-native-keyboard-aware-scroll-view-0.9.1.tgz#9e54b565a5f19b30bed12221d48921781f7630af"
+  integrity sha512-tBZ8rmjELN0F6t5UBp5CW3NYmZXgVnJSzVCssv/OqG2t6kiB+OUTqxNvUP24K+HARX4H+XaW0aEJSFQkQCv6KA==
+  dependencies:
+    prop-types "^15.6.2"
+    react-native-iphone-x-helper "^1.0.3"
+
+react-native-linear-gradient@^2.5.6:
+  version "2.5.6"
+  resolved "https://registry.yarnpkg.com/react-native-linear-gradient/-/react-native-linear-gradient-2.5.6.tgz#96215cbc5ec7a01247a20890888aa75b834d44a0"
+  integrity sha512-HDwEaXcQIuXXCV70O+bK1rizFong3wj+5Q/jSyifKFLg0VWF95xh8XQgfzXwtq0NggL9vNjPKXa016KuFu+VFg==
 
 react-native-nfc-manager@^2.1.9:
   version "2.1.9"
