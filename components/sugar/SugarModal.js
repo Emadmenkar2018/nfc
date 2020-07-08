@@ -1,11 +1,15 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import {View, Modal ,Text , Image } from 'react-native'
 import { responsiveScreenFontSize, responsiveWidth } from 'react-native-responsive-dimensions'
 import {Button} from 'react-native-elements'
+import NfcManager, {NfcEvents} from 'react-native-nfc-manager';
 
 const SugarModal  = (props) => {
 
     const [ready,setReady] = useState(true)
+
+   
+    props.readNfc()
 
     return(
 
