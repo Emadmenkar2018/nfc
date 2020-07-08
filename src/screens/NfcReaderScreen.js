@@ -11,7 +11,7 @@ class NfcReaderScreen extends React.Component {
   componentDidMount() {
     NfcManager.start();
     NfcManager.setEventListener(NfcEvents.DiscoverTag, tag => {
-      console.warn('tag', tag);
+      console.log('tag', tag);
       NfcManager.setAlertMessageIOS('I got your tag!');
       NfcManager.unregisterTagEvent().catch(() => 0);
     });
@@ -50,10 +50,10 @@ class NfcReaderScreen extends React.Component {
   _test =  () => {
     try {
       NfcManager.registerTagEvent().then( resp =>{
-        console.warn('resp', resp);
+        console.log('resp', resp);
       });
     } catch (ex) {
-      console.warn('ex', ex);
+      console.log('ex', ex);
       NfcManager.unregisterTagEvent().catch(() => 0);
     }
   }
