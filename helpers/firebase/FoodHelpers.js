@@ -62,13 +62,36 @@ export const addingUserMeal = () => {
         firestore().collection("user_meals").where('uid' , "==",user).get().then(function(querySnapshot){
             if (querySnapshot.size > 0) {
                 querySnapshot.forEach(doc => { 
-                    userMeals.push(doc.data()) 
+                    userMeals.push({...doc.data(), doc_id : doc.id})  
                 });
             }
             else { 
                   console.log('No Records'); 
             }    
         })
+        return userMeals ;
+    }
+
+
+    export const deleteUserMeal = (doc_id) => {
+        var userMeals = []
+        const user =  auth().currentUser.uid;
+        firestore().collection("user_meals").doc(doc_id).delete()
+        .then(res => console.log('Deleted Successfully'))
+        .catch(err => console.log('err',err))
+        return userMeals ;
+    }
+
+
+    export const editUserMeal = (doc_id, content) => {
+        var userMeals = []
+        const user =  auth().currentUser.uid;
+        firestore().collection("user_meals").doc(doc_id)
+        .update({
+            'content': content,
+          })
+        .then(res => console.log('updated Successfully'))
+        .catch(err => console.log('err',err))
         return userMeals ;
     }
 
