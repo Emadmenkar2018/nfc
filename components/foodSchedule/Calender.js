@@ -10,17 +10,21 @@ import DayComponent from './DayComponent'
 
 
 const MyCalender = ({   ...props }) => { 
-  
-   const [index, setIndex] =useState(2)  
+   
    const myScroller = useRef(null); 
+   const [oneSelected, setoneSelected] = useState(true)
  
 
 //    myScroller.scrollTo(30); 
 
 
-   let DaysList = _newgetDates().map(day => (
+   let DaysList = _newgetDates().map((day,key) => (
         <DayComponent
+            selectedIndex={props.selectedIndex}
+            setSelectedIndex={props.setSelectedIndex}
+            isSelected= {props.isSelected}
             day={day}
+            key={day}
         />
     )); 
      
@@ -30,7 +34,7 @@ const MyCalender = ({   ...props }) => {
             <View style={{width:'100%'  ,alignContent:'center',justifyContent:'center',zindex:1,borderRadius:20}}> 
  
                 
-                <ScrollView ref={myScroller} style={{alignSelf:'center',borderRadius:20}} snapToEnd={true} horizontal={true} showsHorizontalScrollIndicator={false}>
+                <ScrollView ref={myScroller} style={{alignSelf:'center',borderRadius:20 }} snapToEnd={true} horizontal={true} showsHorizontalScrollIndicator={false}>
 
                     {DaysList}
                     

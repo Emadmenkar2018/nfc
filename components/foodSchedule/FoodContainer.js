@@ -4,6 +4,7 @@ import React from 'react';
 import { View,   StyleSheet , Text, TouchableOpacity,Image} from 'react-native';   
 import {  responsiveScreenFontSize,   responsiveWidth } from "react-native-responsive-dimensions"; 
 import { Icon } from 'react-native-elements';
+import {deleteUserMeal ,editUserMeal} from '../../helpers/firebase/FoodHelpers'
 // import Month from '../../constants/arrays' 
 
 
@@ -11,8 +12,7 @@ const FoodContainer = ({   ...props }) => {
  
 
  
-       return (
-           <TouchableOpacity onPress={()=>console.log('Hey')}>
+       return ( 
 
                 <View style={{...styles.container }}>
 
@@ -38,15 +38,14 @@ const FoodContainer = ({   ...props }) => {
 
                    <View style={{alignitems:'center' , flexDirection:'row'}}> 
 
-                        {/* <Icon name ="edit" containerStyle={{marginHorizontal:5}} type="material" size={responsiveScreenFontSize(2)} /> */}
+                        <Icon name ="edit" onPress={()=> editUserMeal(props.doc_id)} containerStyle={{marginHorizontal:5}} type="material" size={responsiveScreenFontSize(2)} />
 
-                        <Icon name ="delete" containerStyle={{marginHorizontal:5}} type="material" size={responsiveScreenFontSize(2)} />
+                        <Icon onPress={()=> deleteUserMeal(props.doc_id)} name ="delete" containerStyle={{marginHorizontal:5}} type="material" size={responsiveScreenFontSize(2)} />
 
                     </View>
                 
                 </View>
-
-           </TouchableOpacity> 
+ 
        ) 
    } 
 
