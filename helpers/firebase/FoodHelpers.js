@@ -66,7 +66,6 @@ export const addingUserMeal = () => {
                 });
             }
             else { 
-                  console.log('No Records'); 
             }    
         })
         return userMeals ;
