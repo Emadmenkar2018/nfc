@@ -1,15 +1,53 @@
 import React, {useState,useEffect} from 'react'
-import {View, Modal ,Text , Image } from 'react-native'
+import {View, Modal ,Text , Image ,Platform , ToastAndroid , Alert} from 'react-native'
 import { responsiveScreenFontSize, responsiveWidth } from 'react-native-responsive-dimensions'
 import {Button} from 'react-native-elements'
 import NfcManager, {NfcEvents} from 'react-native-nfc-manager';
+ 
 
 const SugarModal  = (props) => {
 
     const [ready,setReady] = useState(true)
 
+    useEffect(() => {
+        NfcManager.start();
+        NfcManager.setEventListener(NfcEvents.DiscoverTag, tag => {
+          console.warn('tag', tag);
+          NfcManager.setAlertMessageIOS('I got your tag!');
+          NfcManager.unregisterTagEvent().catch(() => 0);
+        });
+
+        return () => {
+            NfcManager.setEventListener(NfcEvents.DiscoverTag, null);
+            NfcManager.unregisterTagEvent().catch(() => 0);
+        }
+    }, [])
+
+
+    const cancelNfc = () => {
+        NfcManager.unregisterTagEvent().catch(() => 0);
+      }
+
+    const  readNfc =  () => {
+        try {
+          NfcManager.registerTagEvent().then( resp =>{
+              console.warn(resp)
+            //   if (resp.length > 0 && resp !=="undefined"){
+            //     if (Platform.OS === 'android') {
+            //         ToastAndroid.show('Tarama Başarılıdır', ToastAndroid.SHORT)
+            //     } else {
+            //         Alert.alert('Tarama Başarılıdır');
+            //     } 
+            //   }
+            // console.warn('resp', resp);
+          });
+        } catch (ex) {
+          console.log('ex', ex);
+          NfcManager.unregisterTagEvent().catch(() => 0);
+        }
+      }
+
    
-    props.readNfc()
 
     return(
 
@@ -44,15 +82,29 @@ const SugarModal  = (props) => {
                         }
                     
                     </View>
+ 
+                    <View style={{flexDirection:'row',justifyContent:'space-evenly',alignItems:'center'}}>
 
-                    
-                    <Button 
-                        onPress={()=>props.closeModal()}
-                        title= {ready ? "Iptal": 'Ana Sayfaya Dön'}
-                        containerStyle={{borderRadius:20  ,marginBottom:15 , width:'30%'}}
-                        buttonStyle={{ backgroundColor:'#fe796d'}}
-                        titleStyle={{color:'#fff',fontSize:responsiveScreenFontSize(1.8),fontFamily:'BarlowCondensed-SemiBold'}}
-                    />
+                        <Button 
+                            onPress={()=>readNfc()}
+                            title= {'Başla'}
+                            containerStyle={{borderRadius:20  ,marginBottom:15 , width:'30%'}}
+                            buttonStyle={{ backgroundColor:'#fe796d'}}
+                            titleStyle={{color:'#fff',fontSize:responsiveScreenFontSize(1.8),fontFamily:'BarlowCondensed-SemiBold'}}
+                        />
+
+                        <Button 
+                            onPress={()=>{
+                                cancelNfc()
+                                props.closeModal()
+                            }}
+                            title= {"Iptal"}
+                            containerStyle={{borderRadius:20  ,marginBottom:15 , width:'30%'}}
+                            buttonStyle={{ backgroundColor:'#fe796d'}}
+                            titleStyle={{color:'#fff',fontSize:responsiveScreenFontSize(1.8),fontFamily:'BarlowCondensed-SemiBold'}}
+                        />
+
+                    </View>
 
 
                 </View>
