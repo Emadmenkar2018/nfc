@@ -1,13 +1,11 @@
 import React , {useState,useRef} from 'react';
 import {View , StyleSheet} from 'react-native'
 import TabBar from '../../components/main/TabBar'
-import TitleBar from '../../components/main/TitleBar'
-import TableScreen from './TableScreen'
+import TitleBar from '../../components/main/TitleBar' 
 import FoodShceduleScreen from './FoodShceduleScreen'
 import LogScreen from './LogScreen'
 import SugarScreen from './SugarScreen'
-import ViewPager from '@react-native-community/viewpager';
-import auth   from '@react-native-firebase/auth';
+import ViewPager from '@react-native-community/viewpager'; 
 
 
 const HomeScreen = (props) =>{
