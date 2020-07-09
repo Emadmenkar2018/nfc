@@ -69,7 +69,7 @@ const LogScreen =(props) =>  {
                 <Text style={{color:"#253547" , fontFamily:'BarlowCondensed-SemiBold',fontSize:responsiveScreenFontSize(2.2)}}>Geçmiş</Text>
 
                 <View style={{width:'100%', flexDirection:'row',alignItems:'center',justifyContent:'center', marginBottom:10}}>
-                    <TouchableOpacity style={{width:'100%',height:'100%'}} onPress={()=>Actions.push('table')}>
+                    <TouchableOpacity style={{width:'100%',height:'100%'}} onPress={()=>Actions.push('sugarTable')}>
                         <ImageBackground resizeMode={'cover'}  style={{width:'100%',height:responsiveHeight(25) ,borderRadius:10,marginBottom:0,backgroundColor:'#000'}} source={require('../../assets/sugar.jpg')}>
                             <View style={{width:'100%',height:'100%',backgroundColor:'rgba(255, 245, 242,.2)',justifyContent:'flex-end',alignItems:'flex-start',paddingLeft:20,borderRadius:10}}>
 
@@ -82,7 +82,7 @@ const LogScreen =(props) =>  {
                 </View>
 
                 <View style={{width:'100%', flexDirection:'row',alignItems:'center',justifyContent:'center', alignSelf:'flex-end'}}>
-                    <TouchableOpacity style={{width:'100%',height:'100%'}} onPress={()=>Actions.push('table')}>
+                    <TouchableOpacity style={{width:'100%',height:'100%'}} onPress={()=>Actions.push('foodTable')}>
                         <ImageBackground resizeMode={'cover'}  style={{width:'100%',height:responsiveHeight(25) ,borderRadius:10,marginBottom:0,backgroundColor:'#000'}} source={require('../../assets/food.jpg')}>
                             <View style={{width:'100%',height:'100%',backgroundColor:'rgba(255, 245, 242,.2)',justifyContent:'flex-end',alignItems:'flex-start',paddingLeft:20,borderRadius:10}}>
 
