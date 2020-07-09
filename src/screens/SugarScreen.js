@@ -15,35 +15,35 @@ const SugarScreen =({ history, ...props })   =>{
 
    const [modalVisibility, setModalVisibility] = useState(false)
 
-    useEffect(() => {
-        NfcManager.start();
-        NfcManager.setEventListener(NfcEvents.DiscoverTag, tag => {
-          console.log('tag', tag);
-          NfcManager.setAlertMessageIOS('I got your tag!');
-          NfcManager.unregisterTagEvent().catch(() => 0);
-        });
+    // useEffect(() => {
+    //     NfcManager.start();
+    //     NfcManager.setEventListener(NfcEvents.DiscoverTag, tag => {
+    //       console.log('tag', tag);
+    //       NfcManager.setAlertMessageIOS('I got your tag!');
+    //       NfcManager.unregisterTagEvent().catch(() => 0);
+    //     });
 
-        return () => {
-            NfcManager.setEventListener(NfcEvents.DiscoverTag, null);
-            NfcManager.unregisterTagEvent().catch(() => 0);
-        }
-    }, [])
+    //     return () => {
+    //         NfcManager.setEventListener(NfcEvents.DiscoverTag, null);
+    //         NfcManager.unregisterTagEvent().catch(() => 0);
+    //     }
+    // }, [])
 
 
-    const cancelNfc = () => {
-        NfcManager.unregisterTagEvent().catch(() => 0);
-      }
+    // const cancelNfc = () => {
+    //     NfcManager.unregisterTagEvent().catch(() => 0);
+    //   }
 
-    const  readNfc =  () => {
-        try {
-          NfcManager.registerTagEvent().then( resp =>{
-            console.log('resp', resp);
-          });
-        } catch (ex) {
-          console.log('ex', ex);
-          NfcManager.unregisterTagEvent().catch(() => 0);
-        }
-      }
+    // const  readNfc =  () => {
+    //     try {
+    //       NfcManager.registerTagEvent().then( resp =>{
+    //         console.log('resp', resp);
+    //       });
+    //     } catch (ex) {
+    //       console.log('ex', ex);
+    //       NfcManager.unregisterTagEvent().catch(() => 0);
+    //     }
+    //   }
       
  
     const chartConfig = {
@@ -71,7 +71,7 @@ const SugarScreen =({ history, ...props })   =>{
 
 
       const closeModal = ()=>{
-        cancelNfc()
+        // cancelNfc()
         setModalVisibility(false)
       }
 
@@ -107,8 +107,8 @@ const SugarScreen =({ history, ...props })   =>{
                         <Button 
                         onPress={()=>{
                           // readNfc()
-                          // setModalVisibility(true)
-                          Actions.push('nfcReader')
+                          setModalVisibility(true)
+                          // Actions.push('nfcReader')
                         }}
                         title="Tara Şimdi" 
                         containerStyle={{borderRadius:10  ,marginBottom:15 }}
@@ -122,12 +122,15 @@ const SugarScreen =({ history, ...props })   =>{
 
             </View> 
 
+            { modalVisibility && 
+                <SugarModal
+                  // readNfc={readNfc}
+                  closeModal={closeModal}
+                  modalVisibility={modalVisibility}
+                  />
 
-            <SugarModal
-              readNfc={readNfc}
-              closeModal={closeModal}
-              modalVisibility={modalVisibility}
-              />
+            }
+
 
             
 {/* 
