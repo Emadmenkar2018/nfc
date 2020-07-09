@@ -2,7 +2,8 @@ import React, { useState ,useEffect} from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native'; 
 import HomeScreen from './src/screens/HomeScreen'    
 import NfcReaderScreen from './src/screens/NfcReaderScreen'   
-import TableScreen from './src/screens/TableScreen'    
+import FoodTableScreen from './src/screens/FoodTableScreen'    
+import SugarTableScreen from './src/screens/SugarTableScreen'    
 import { Router, Scene } from 'react-native-router-flux'
 import auth   from '@react-native-firebase/auth';
 import LoginScreen from './src/screens/auth/LoginScreen'
@@ -52,7 +53,8 @@ const App = ()=>{
               <Scene key = "root">
                   <Scene key = "home" component = {HomeScreen}  hideNavBar={true} title = "Home" initial = {true} />
                   <Scene key = "nfcReader" component = {NfcReaderScreen} hideNavBar={true}  title = "NfcReader" />
-                  <Scene key = "table" component = {TableScreen} hideNavBar={true}   title = "Table" />
+                  <Scene key = "foodTable" component = {FoodTableScreen} hideNavBar={true}   title = "foodTable" />
+                  <Scene key = "sugarTable" component = {SugarTableScreen} hideNavBar={true}   title = "sugarTable" />
               </Scene>
           </Router>
       ) 
